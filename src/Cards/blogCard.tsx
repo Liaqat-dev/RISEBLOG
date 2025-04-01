@@ -1,12 +1,16 @@
+import Button from "@/components/button.tsx";
+
 interface BlogCardProps {
     imageSrc: string;
     title: string;
     description: string;
     timeAgo?: | string | "12h Ago";
+    author: string;
 }
 
 const BlogCard = ({
                       imageSrc,
+    author,
                       title,
                       description,
                       timeAgo,
@@ -42,13 +46,11 @@ const BlogCard = ({
                     <div className="flex flex-col gap-[4px]">
                         <time className="text-[10px] text-[#42424264]">{timeAgo}</time>
                     </div>
+                    <div className="flex justify-between items-center">
+                        <p className={'text-secondary font-normal'}>{author}</p>
+                        <Button titleStyle={'font-mono'} title={'Read More'}/>
+                    </div>
 
-                    <button
-                        className="px-[16px] py-[8px] bg-[#3652E1] text-white text-[12px] font-semibold rounded-[21px]"
-                        // onClick={onReadMoreClick}
-                    >
-                        Read More
-                    </button>
                 </div>
             </section>
         </article>

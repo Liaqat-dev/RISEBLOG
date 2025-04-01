@@ -1,10 +1,12 @@
 import {nav_links} from "../../constants/nav_links.ts";
-import {NavLink} from "react-router"; // Ensure you're using react-router-dom for NavLink
+import {NavLink} from "react-router-dom";
 import {useState} from "react";
 import {IoMenu, IoClose} from "react-icons/io5";
 import Button from "@/components/button.tsx";
-
-const NavBar = () => {
+interface Props {
+    className?: string,
+}
+const NavBar = ({className}:Props) => {
     const [showSideMenu, setShowSideMenu] = useState(false);
 
     // Toggle the side menu
@@ -14,7 +16,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="relative w-screen bg-white shadow-sm">
+        <nav className={` w-screen bg-white h-16 shadow-sm ${className}`}>
             {/* Navbar Header */}
             <div className="flex items-center justify-between  h-16 px-6">
                 {/* Logo */}
@@ -61,7 +63,7 @@ const NavBar = () => {
             {/* Side Menu (Absolute Positioning Below Navbar) */}
             {showSideMenu && (
                 <div
-                    className="absolute top-full w-1/3   right-0  bg-white shadow-md border-l border-b border-t border-gray-200  z-50"
+                    className="absolute top-full w-1/3   right-0  bg-white-1 shadow-md border-l border-b border-t border-gray-200  z-40"
                     style={{borderBottomLeftRadius: 15}}
                 >
                     <ul className="list-none ">

@@ -97,4 +97,11 @@
     border-bottom-right-radius: 30px;
 }
 
+.concave-box {
+    width: 200px;
+    height: 200px;
+    background: blue;
+    -webkit-clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
+}
 
