@@ -91,17 +91,7 @@
     margin-bottom: auto;
 }
 .semi_round_image{
-    border-bottom-left-radius: 40%;
-    border-top-left-radius: 40%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 30px;
+    border-radius: 40% 50% 30px 40%;
 }
 
-.concave-box {
-    width: 200px;
-    height: 200px;
-    background: blue;
-    -webkit-clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
-}
 

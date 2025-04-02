@@ -1,64 +1,42 @@
 import RingContainer from "@/components/Rings/ringContainer.tsx";
-import {Home_Section1_Routes} from "../../../constants/routes.tsx";
-import {Route, Routes} from "react-router";
+import {Home_Section1_Components} from "../../../constants/routes.tsx";
 import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import DailyArticles from "@/Screen/Home/DailyArticles.tsx";
 
 
-import {useNavigate} from "react-router";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function Home() {
-    const navigate = useNavigate();
-    const n = 1;
 
-    const [screenNumber, setScreenNumber] = useState(0);
+
+    const [componentNumber, setComponentNumber] = useState(0);
     const handleNavigate = (op: string) => {
-        setScreenNumber((Prev) => {
-            let newScreenNumber = Prev;
+        setComponentNumber((Prev) => {
+            let activeComponentNumber = Prev;
             if (op === '+') {
-                newScreenNumber = (Prev + 1) % Home_Section1_Routes.length;
+                activeComponentNumber = (Prev + 1) % Home_Section1_Components.length;
             } else if (op === '-') {
-                newScreenNumber = (Prev - 1 + Home_Section1_Routes.length) % Home_Section1_Routes.length;
+                activeComponentNumber = (Prev - 1 + Home_Section1_Components.length) % Home_Section1_Components.length;
             }
-
-            navigate(Home_Section1_Routes[newScreenNumber].path);
-
-
-            return newScreenNumber;
+            return activeComponentNumber;
         });
     };
 
-
-    useEffect(() => {
-        navigate(Home_Section1_Routes[screenNumber].path);
-    }, [n]);
-
-    return (<div className={''}>
-            <RingContainer >
-                <Routes>
-                    {
-                        Home_Section1_Routes.map((item, index) => (
-                            <Route key={index} path={item.path} element={item.element}/>
-                        ))
-                    }
-                </Routes>
-                <div className={'absolute  bottom-9  flex  w-full justify-center '}>
-                    <div className={' flex justify-center gap-7'}>
-                        <FaArrowLeft size={40} className={'text-secondary cursor-pointer hover:scale-125'}
-                                     onClick={() => handleNavigate('-')}/>
-                        <FaArrowRight size={40} className={'text-secondary cursor-pointer hover:scale-125'}
-                                      onClick={() => handleNavigate('+')}/>
-
-                    </div>
+    return <div className={''}>
+        <RingContainer>{
+            Home_Section1_Components[componentNumber].element
+        }
+            <div className={'absolute  bottom-9  flex  w-full justify-center '}>
+                <div className={' flex justify-center gap-7'}>
+                    <FaArrowLeft size={40} className={'text-secondary cursor-pointer hover:scale-125'}
+                                 onClick={() => handleNavigate('-')}/>
+                    <FaArrowRight size={40} className={'text-secondary cursor-pointer hover:scale-125'}
+                                  onClick={() => handleNavigate('+')}/>
                 </div>
-
-
-            </RingContainer>
-            <DailyArticles/>
-        </div>
-
-    )
+            </div>
+        </RingContainer>
+        <DailyArticles/>
+    </div>
 }
 
 export default Home

@@ -33,7 +33,7 @@ function CategoryCarousel() {
 }
 
 const ArticleTopics = () => {
-    return (<div className={'mt-16  max-md:mt-10 max-md:max-w-screen'}>
+    return (<div className={'mt-16   max-md:mt-10 max-md:max-w-screen'}>
             <section className="flex w-full  justify-center items-center gap-2 pb-10 max-md:flex-col">
                 <div className="max-lg:w-[28%]  lg:w-[20%] max-md:ml-0 max-md:w-full">
                     <h1 className="text-8xl font-semibold text-zinc-900  max-md:text-center  max-md:max-w-full max-md:text-3xl max-lg:text-5xl max-xl:text-6xl max-2xl:text-7xl">

@@ -1,6 +1,6 @@
 
 function CreatePost() {
-    return (<div className={'mt-16  max-md:mt-10 max-md:max-w-screen'}>
+    return (<div className={'mt-16 max-md:mt-10 max-md:max-w-screen'}>
             <section className="flex w-full  justify-center items-center gap-2 pb-10 max-md:flex-col max-md:items-center">
                 <div className={'flex w-[33%] max-sm:flex-col md:flex-row  '}>
                     <h1 className="float-right text-8xl font-semibold text-zinc-900  max-md:text-center  max-md:max-w-full max-md:text-3xl max-lg:text-5xl max-xl:text-6xl max-2xl:text-7xl">

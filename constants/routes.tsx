@@ -5,9 +5,9 @@ import Contact from "@/Screen/Contact Us/Contact.tsx";
 import ArticleTopics from "@/Screen/Home/ArticleTopics.tsx";
 import CreatePost from "@/Screen/Home/CreatePost.tsx";
 
-export const Home_Section1_Routes = [
-    { path: '/CreatePost', element: <CreatePost/>, name: 'Create Post' },
-    { path: '/ArticleTopics', element: <ArticleTopics />, name: 'Article Topics' },
+export const Home_Section1_Components = [
+    { element: <CreatePost/>, name: 'Create Post' },
+    {element: <ArticleTopics />, name: 'Article Topics' },
 ];
 
 export const Screen_Routes = [
