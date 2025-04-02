@@ -6,7 +6,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button({ title,className,titleStyle, ...rest }: Props) {
-    return <button className={`rounded-3xl cursor-pointer bg-blue  px-4 py-0.5 mx-1 +${className}`} {...rest}><span className={` text-white font-light + ${titleStyle}`}>{title}</span></button>
+    return <button className={`bg-blue-1 flex items-center rounded-full px-2 cursor-pointer py-0.5 mx-0.5 +${className}`} {...rest}><span style={{lineHeight:1}} className={` text-white text-center align-middle  font-light + ${titleStyle}`}>{title}</span></button>
 
 }
 

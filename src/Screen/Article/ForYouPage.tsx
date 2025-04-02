@@ -65,10 +65,10 @@ function ForYouPage() {
 
 
     return <div className={'flex justify-center h-screen mt-10 mx-auto gap-16 max-w-7xl'}>
-        <section className={'flex-2/4 max-w-[60%] bg-white-1'}>
+        <section className={'flex-2/4 max-w-[600px] bg-white-1'}>
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
-            <CategoryScroller categories={categories} />
+            {/*<CategoryScroller categories={categories} />*/}
             <div className={''}>
                 {
                     topicsDaily.map((topic,index )=> (
