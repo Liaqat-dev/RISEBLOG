@@ -4,11 +4,14 @@ import {blogCategories} from "../../../constants/categoryCards.ts";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useRef } from "react";
 
+import topicsDaily from "../../../constants/topicsDaily.ts";
+import BlogCardH from "@/Cards/blogCardH.tsx";
+
 
 interface Props {
     categories: string[];
 }
-export function CategoryScroller({ categories}:Props) {
+function CategoryScroller({ categories}:Props) {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const scroll = (direction: "left" | "right") => {
@@ -45,7 +48,7 @@ export function CategoryScroller({ categories}:Props) {
             </div>
 
             <button
-                className="absolute right-[0] z-10 bg-white-1  p-2  shadow-md"
+                className="absolute right-0 z-10 bg-white-1  p-2  shadow-md"
                 onClick={() => scroll("right")}
             >
                 <FaArrowRight  className={'text-secondary'} size={20} />
@@ -66,6 +69,13 @@ function ForYouPage() {
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
             <CategoryScroller categories={categories} />
+            <div className={''}>
+                {
+                    topicsDaily.map((topic,index )=> (
+                        <BlogCardH key={index} title={topic.title} author={topic.author}  description={topic.meta} imageSrc={topic.thumbnail}  />
+                    ))
+                }
+            </div>
         </section>
         <section className={'flex-1/4 bg-gradient-primary max-lg:hidden'}>
             Rigth
