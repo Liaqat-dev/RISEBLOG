@@ -25,7 +25,7 @@ function CategoryScroller({ categories}:Props) {
     };
 
     return (
-        <div className="relative flex items-center">
+        <div className="relative flex items-center max-sm:w-screen">
             {/* Left Scroll Button */}
             <button
                 className="absolute left-0 z-10 bg-white-1 p-2  shadow-md"
@@ -37,7 +37,7 @@ function CategoryScroller({ categories}:Props) {
             {/* Scrollable Category List */}
             <div
                 ref={scrollRef}
-                className="h-10 px-10 my-2 flex overflow-x-auto whitespace-nowrap px-2 no-scrollbar"
+                className="h-10 px-10  my-2 flex overflow-x-auto whitespace-nowrap px-2 no-scrollbar"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
                 {categories.map((category, index) => (
@@ -65,10 +65,10 @@ function ForYouPage() {
 
 
     return <div className={'flex justify-center h-screen mt-10 mx-auto gap-16 max-w-7xl'}>
-        <section className={'flex-2/4 max-w-[600px] bg-white-1'}>
+        <section className={'flex-2/4  max-w-[600px] px-2 bg-white-1'}>
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
-            {/*<CategoryScroller categories={categories} />*/}
+            <CategoryScroller categories={categories} />
             <div className={''}>
                 {
                     topicsDaily.map((topic,index )=> (
