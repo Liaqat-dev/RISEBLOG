@@ -94,4 +94,11 @@
     border-radius: 40% 50% 30px 40%;
 }
 
+.gradient-text{
+        background: -webkit-linear-gradient(var(--blue),var(--purple), var(--dark-purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+}
+
 
