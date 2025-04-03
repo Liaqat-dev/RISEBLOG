@@ -1,8 +1,8 @@
 import {FaGithub, FaInstagram, FaLinkedin, FaWhatsapp} from "react-icons/fa";
 
-function AboutPage() {
+function About() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen  bg-white-1 p-6 pb-10">
+        <div className="flex flex-col items-center bg-white-1 min-h-screen  p-6 p-6 pb-10">
             <h1 className="text-5xl font-bold mb-4 text text-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
                 About RiseBlog
             </h1>
@@ -44,7 +44,7 @@ function AboutPage() {
                     I specialize in full-stack development, focusing on modern frameworks and best practices
                     to deliver high-performance applications. Feel free to connect with me and share your thoughts!
                 </p>
-                <div className="flex mx-auto w-fit gap-4 mt-6  ">
+                <div className="flex mx-auto w-fit gap-4 mt-6 mb-10 ">
                     <a href="https://wa.me/+923044016143" target="_blank" rel="noopener noreferrer"
                        className="text-secondary text-2xl hover:opacity-80">
                         <FaWhatsapp className={'text-green-500'}/>
@@ -67,4 +67,4 @@ function AboutPage() {
     );
 }
 
-export default AboutPage;
+export default About;

@@ -6,7 +6,7 @@ interface Props {
 
 function RingContainer({children}: Props) {
     return (
-        <div className="relative h-[calc(100vh-6rem)] overflow-hidden ">
+        <div className="relative h-[calc(100vh-4rem)] overflow-hidden z-0 ">
             <Ring size={Math.floor(Math.random() * (10)) + 5} degree={Math.floor(Math.random() * 181)}
                   position={{top: Math.floor(Math.random() * (50)) + 16, left: Math.floor(Math.random() * (30)) + 10}}
                  />

@@ -22,7 +22,7 @@ function Home() {
         });
     };
 
-    return <div className={'z-0'}>
+    return <div>
         <RingContainer>
             {
             Home_Section1_Components[componentNumber].element

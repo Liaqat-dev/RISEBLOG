@@ -65,7 +65,7 @@ function ForYouPage() {
     categories.unshift("All")
 
 
-    return <div className={'min-w-0 h-[100vh] bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl'}>
+    return <div className={'min-w-0 bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl'}>
         <div className="flex flex-col gap-2 p-2 my-1">
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>

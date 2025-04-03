@@ -22,7 +22,7 @@ function Contact() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-white-1 p-6">
+        <div className="flex flex-col items-center  min-h-screen overflow-y-auto bg-white-1 p-6 pb-10">
             <h1 className="text-5xl font-bold text-center text-secondary mb-4 gradient-text ">Hello, I'm Liaqat!</h1>
             <p className="text-lg text-gray-700 text-center max-w-2xl mb-6">
                 A passionate developer specializing in web development. Feel free to reach out to me
