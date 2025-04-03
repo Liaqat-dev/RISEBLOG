@@ -63,7 +63,7 @@ const NavBar = ({className}:Props) => {
             {/* Side Menu (Absolute Positioning Below Navbar) */}
             {showSideMenu && (
                 <div
-                    className="absolute top-full w-1/3   right-0  bg-white-1 shadow-md border-l border-b border-t border-gray-200  z-40"
+                    className="absolute top-full w-1/3   right-0  bg-white-1 shadow-md border-l border-b border-t border-gray-200  "
                     style={{borderBottomLeftRadius: 15}}
                 >
                     <ul className="list-none ">
@@ -73,8 +73,8 @@ const NavBar = ({className}:Props) => {
                                     to={link.href}
                                     className={({isActive}) =>
                                         isActive
-                                            ? "font-bold text-blue-600 p-2 "
-                                            : "text-gray-700 hover:text-blue-600 p-2"
+                                            ? "font-bold text-blue-600 p-2 z-40"
+                                            : "text-gray-700 hover:text-blue-600 p-2 z-50"
                                     }
                                     onClick={toggleSideMenu}
                                 >

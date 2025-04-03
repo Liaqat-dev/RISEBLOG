@@ -6,6 +6,7 @@ import { useRef } from "react";
 
 import topicsDaily from "../../../constants/topicsDaily.ts";
 import BlogCardH from "@/Cards/blogCardH.tsx";
+import TrendingCardH from "@/Cards/TrendingCardH.tsx";
 
 
 interface Props {
@@ -25,7 +26,7 @@ function CategoryScroller({ categories}:Props) {
     };
 
     return (
-        <div className="relative flex items-center max-sm:w-screen">
+        <div className="relative mx-1 flex items-center max-sm:w-screen">
             {/* Left Scroll Button */}
             <button
                 className="absolute left-0 z-10 bg-white-1 p-2  shadow-md"
@@ -64,22 +65,35 @@ function ForYouPage() {
     categories.unshift("All")
 
 
-    return <div className={'flex justify-center h-screen mt-10 mx-auto gap-16 max-w-7xl'}>
-        <section className={'flex-2/4  max-w-[600px] px-2 bg-white-1'}>
+    return <div className={'min-w-0 h-[100vh] bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl'}>
+        <div className="flex flex-col gap-2 p-2 my-1">
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
-            <CategoryScroller categories={categories} />
-            <div className={''}>
-                {
-                    topicsDaily.map((topic,index )=> (
-                        <BlogCardH key={index} title={topic.title} author={topic.author}  description={topic.meta} imageSrc={topic.thumbnail}  />
-                    ))
-                }
-            </div>
-        </section>
-        <section className={'flex-1/4 bg-gradient-primary max-lg:hidden'}>
-            Rigth
-        </section>
+        </div>
+        <div className={'flex max-lg:gap-3 gap-9 '}>
+            <section className={'min-w-0 flex-[2] bg-white-1 max-w-[600px]  rounded-md px-2 '}>
+                <CategoryScroller categories={categories}/>
+                <div className={''}>
+                    {
+                        topicsDaily.map((topic, index) => (
+                            <BlogCardH key={index} title={topic.title} author={topic.author} description={topic.meta}
+                                       imageSrc={topic.thumbnail}/>
+                        ))
+                    }
+                </div>
+            </section>
+            <section className={'min-w-0 flex-[1] p-1 pt-2 max-w-[400px] h-[27rem] rounded-md bg-white-1 max-md:hidden'}>
+                <h2 className={'font-bold italic text-[13px]'}>Trending</h2>{
+                topicsDaily.slice(2,5).map((topic, index) => (
+                    <TrendingCardH key={index} imageSrc={topic.thumbnail} title={topic.title} author={topic.author}/>
+                ))
+            }
+
+            </section>
+
+
+        </div>
+
     </div>
 }
 

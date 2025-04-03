@@ -1,5 +1,4 @@
 interface Props {
-    zindex?:number|10,
     size:number,
     degree?:number,
     position?: {
@@ -10,9 +9,9 @@ interface Props {
     };
 }
 
-function Ring({ size, degree, position, zindex}: Props) {
+function Ring({ size, degree, position}: Props) {
     return (
-        <div className={`bg-gradient-primary rounded-full z-${zindex}`}
+        <div className={`bg-gradient-primary rounded-full`}
             style={{
                 width: size+Math.floor(Math.random() * (10)) + 5,
                 height: size+90,

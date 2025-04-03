@@ -22,8 +22,9 @@ function Home() {
         });
     };
 
-    return <div className={''}>
-        <RingContainer>{
+    return <div className={'z-0'}>
+        <RingContainer>
+            {
             Home_Section1_Components[componentNumber].element
         }
             <div className={'absolute  bottom-9  flex  w-full justify-center '}>
