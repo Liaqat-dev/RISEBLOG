@@ -101,3 +101,27 @@ export const blogCategories = [
         image: "https://picsum.photos/540/960?random=20",
     },
 ];
+
+export const blogTags = [
+    "Life",
+    "Technology",
+    "Health",
+    "Travel",
+    "Education",
+    "Productivity",
+    "Career",
+    "Finance",
+    "Lifestyle",
+    "Inspiration",
+    "Self-Improvement",
+    "Business",
+    "Creativity",
+    "Motivation",
+    "Culture",
+    "Entertainment",
+    "Food",
+    "News",
+    "Learning",
+    "Tips"
+];
+

@@ -91,7 +91,10 @@
     margin-bottom: auto;
 }
 .semi_round_image{
-    border-radius: 40% 50% 30px 40%;
+   border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 80%;
 }
 
 .gradient-text{

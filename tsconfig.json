@@ -10,7 +10,8 @@
     "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/context/*": ["context/*"]
     }
   }
 }

@@ -36,13 +36,13 @@ const BlogCardH = ({
             <section className="p-[5px] w-full flex flex-col justify-between">
                 <div className='flex justify-between w-full overflow-hidden'>
                     <h3 className="text-[11px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]
-                                 font-semibold text-[#1C1C1C] w-[83%]">
+                                 font-semibold text-[#1C1C1C] w-[80%]">
                         {title.length > 120 ? title.substring(0, 120) + '...' : title}
                     </h3>
                     <p className='text-[9px] md:text-[10px] lg:text-[11px] xl:text-[12px] text-gray-500'>{timeAgo}</p>
                 </div>
 
-                <div className='w-[85%] overflow-hidden'>
+                <div className='w-full overflow-hidden'>
                     <p className="text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] text-gray-500">
                         {description.length > 140 ? description.substring(0, 140) + '...' : description}
                     </p>

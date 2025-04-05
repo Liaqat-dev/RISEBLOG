@@ -27,11 +27,11 @@ function Home() {
             {
             Home_Section1_Components[componentNumber].element
         }
-            <div className={'absolute  bottom-9  flex  w-full justify-center '}>
+            <div className={'absolute  bottom-19  flex  w-full justify-center '}>
                 <div className={' flex justify-center gap-7'}>
-                    <FaArrowLeft size={40} className={'text-secondary cursor-pointer hover:scale-125'}
+                    <FaArrowLeft size={40} className={'text-primary cursor-pointer hover:scale-125'}
                                  onClick={() => handleNavigate('-')}/>
-                    <FaArrowRight size={40} className={'text-secondary cursor-pointer hover:scale-125'}
+                    <FaArrowRight size={40} className={'text-primary cursor-pointer hover:scale-125'}
                                   onClick={() => handleNavigate('+')}/>
                 </div>
             </div>

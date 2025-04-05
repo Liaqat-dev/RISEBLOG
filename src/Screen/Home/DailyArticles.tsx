@@ -38,9 +38,9 @@ function CarouselSize() {
 
 const DailyArticles = () => {
     return (
-        <div className={'bg-blue-1 flex justify-center items-center   h-[calc(100vh-4rem)]   max-md:max-w-screen max-md:pb-32'}>
+        <div className={'bg-gradient-primary flex justify-center items-center   h-[calc(100vh-4rem)]   max-md:max-w-screen max-md:pb-32'}>
             <section
-                className="flex  w-full  justify-center items-center gap-2 pb-10 max-md:flex-col max-md:items-center">
+                className="flex  w-full   justify-center items-center gap-2 pb-10 max-md:flex-col max-md:items-center">
                 <div className="max-lg:w-[28%]  lg:w-[20%]  max-md:w-full z-10">
                     <h1 className="text-8xl font-semibold text-zinc-900  max-md:text-center  max-md:max-w-full max-md:text-3xl max-lg:text-5xl max-xl:text-6xl max-2xl:text-7xl">
                         Best <span className={'text-blue-500'}> Posts </span> Today

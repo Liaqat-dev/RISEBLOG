@@ -46,19 +46,19 @@ function About() {
                 </p>
                 <div className="flex mx-auto w-fit gap-4 mt-6 mb-10 ">
                     <a href="https://wa.me/+923044016143" target="_blank" rel="noopener noreferrer"
-                       className="text-secondary text-2xl hover:opacity-80">
+                       className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                         <FaWhatsapp className={'text-green-500'}/>
                     </a>
                     <a href="https://instagram.com/liaqat_ali6143" target="_blank" rel="noopener noreferrer"
-                       className="text-secondary text-2xl hover:opacity-80">
+                       className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                         <FaInstagram className={'text-pink-500'}/>
                     </a>
                     <a href="https://github.com/liaqat-dev" target="_blank" rel="noopener noreferrer"
-                       className="text-secondary text-2xl hover:opacity-80">
+                       className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                         <FaGithub className={'text-black'}/>
                     </a>
                     <a href="https://linkedin.com/in/dev-liaqat-ali" target="_blank" rel="noopener noreferrer"
-                       className="text-secondary text-2xl hover:opacity-80">
+                       className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                         <FaLinkedin/>
                     </a>
                 </div>

@@ -22,7 +22,7 @@ function Contact() {
     };
 
     return (
-        <div className="flex flex-col items-center  min-h-screen overflow-y-auto bg-white-1 p-6 pb-10">
+        <div className="flex flex-col items-center  min-h-[calc(100vh-4rem)] overflow-y-auto bg-white-1 p-6 pb-10">
             <h1 className="text-5xl font-bold text-center text-secondary mb-4 gradient-text ">Hello, I'm Liaqat!</h1>
             <p className="text-lg text-gray-700 text-center max-w-2xl mb-6">
                 A passionate developer specializing in web development. Feel free to reach out to me
@@ -72,19 +72,19 @@ function Contact() {
             </form>
             <div className="flex gap-4 mt-6 mb-8 ">
                 <a href="https://wa.me/+923044016143" target="_blank" rel="noopener noreferrer"
-                   className="text-secondary text-2xl hover:opacity-80">
+                   className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                     <FaWhatsapp className={'text-green-500'}/>
                 </a>
                 <a href="https://instagram.com/liaqat_ali6143" target="_blank" rel="noopener noreferrer"
-                   className="text-secondary text-2xl hover:opacity-80">
+                   className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                     <FaInstagram className={'text-pink-500'}/>
                 </a>
                 <a href="https://github.com/liaqat-dev" target="_blank" rel="noopener noreferrer"
-                   className="text-secondary text-2xl hover:opacity-80">
+                   className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                     <FaGithub className={'text-black'}/>
                 </a>
                 <a href="https://linkedin.com/in/dev-liaqat-ali" target="_blank" rel="noopener noreferrer"
-                   className="text-secondary text-2xl hover:opacity-80">
+                   className="text-secondary text-2xl hover:opacity-80 hover:scale-125">
                     <FaLinkedin/>
                 </a>
             </div>

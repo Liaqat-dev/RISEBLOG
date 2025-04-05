@@ -26,7 +26,7 @@ function CategoryScroller({ categories}:Props) {
     };
 
     return (
-        <div className="relative mx-1 flex items-center max-sm:w-screen">
+        <div className="relative mx-1 flex items-center max-sm:w-[95%]">
             {/* Left Scroll Button */}
             <button
                 className="absolute left-0 z-10 bg-white-1 p-2  shadow-md"
@@ -65,7 +65,7 @@ function ForYouPage() {
     categories.unshift("All")
 
 
-    return <div className={'min-w-0 bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl'}>
+    return <div className={'  min-w-0 bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl h-[calc(100vh-8rem)]'}>
         <div className="flex flex-col gap-2 p-2 my-1">
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
@@ -82,6 +82,7 @@ function ForYouPage() {
                     }
                 </div>
             </section>
+            {/*Trending*/}
             <section className={'min-w-0 flex-[1] p-1 pt-2 max-w-[400px] h-[27rem] rounded-md bg-white-1 max-md:hidden'}>
                 <h2 className={'font-bold italic text-[13px]'}>Trending</h2>{
                 topicsDaily.slice(2,5).map((topic, index) => (

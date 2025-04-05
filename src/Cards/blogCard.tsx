@@ -46,9 +46,15 @@ const BlogCard = ({
                     <div className="flex flex-col gap-[4px]">
                         <time className="text-[10px] text-[#42424264]">{timeAgo}</time>
                     </div>
-                    <div className="flex justify-between items-center">
-                        <p className={'text-secondary font-normal'}>{author}</p>
-                        <Button titleStyle={'font-mono'} title={'Read More'}/>
+                    <div className="flex  w-full justify-between items-center">
+                        <p className='text-white text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] px-1 bg-gradient-primary rounded-full'>
+                            {author}
+                        </p>
+                        <Button
+                            className='bg-blue-1 flex items-center rounded-full px-2 cursor-pointer'
+                            titleStyle='text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px]'
+                            title='Read More'
+                        />
                     </div>
 
                 </div>
