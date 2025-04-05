@@ -9,22 +9,21 @@ import {blogTags} from "../../../constants/categoryCards.ts";
 
 import {useNotification} from "../../../context/NotficationContext/useNotification.ts";
 import TextEditor from "@/components/textEditor/textEditor.tsx";
-import RenderContent from "@/components/textEditor/viewContent.tsx";
 
 
 interface Props {
     initialPost?: {
-        title?: "",
-        thumbnail?: '',
-        content?: "",
-        tags?: string[],
-        meta?: '',
+        title: "",
+        thumbnail: '',
+        content: "",
+        tags: string[],
+        meta: '',
     }
     submitButtonTitle: "Update" | "Post",
     onSubmit?: (data: FormData) => void
 }
 
-const NewArticle = ({onSubmit, initialPost}: Props) => {
+const NewArticle = ({ initialPost}: Props) => {
     const defaultPost = {
         title: "",
         thumbnail: '',
@@ -51,32 +50,8 @@ const NewArticle = ({onSubmit, initialPost}: Props) => {
         }
     }, [initialPost]);
 
-    const {title, tags, meta,} = postInfo;
+    const {title,  meta,} = postInfo;
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const {value, name} = event.target;
-        if (name === "thumbnail") {
-            setThumbnailUploading(true);
-            const file = event.target.files?.[0];
-            if (!file?.type.includes('image')) {
-                setThumbnailUploading(false);
-                // return updateNotification('error', "Please select an image type file");
-            }
-            setPostInfo({...postInfo, thumbnail: file});
-            setThumbnailUploading(false);
-            return setThumbnailUrl(URL.createObjectURL(file));
-        }
-
-        if (name === "tags") {
-            const newTags = tags.split(",");
-            if (newTags.length > 4) {
-                // updateNotification('warning', 'Only first 4 tags will be added.');
-            }
-            return setPostInfo({...postInfo, [name]: value});
-        }
-        setPostInfo({...postInfo, [name]: value})
-
-    }
 
     const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const {value, name} = event.target;
@@ -94,10 +69,6 @@ const NewArticle = ({onSubmit, initialPost}: Props) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        // const newTags = tags
-        //     .split(",").map((item) => item.trim())
-        //     .splice(0, 4);
-        //
         if (!thumbnailUrl.trim()) return updateNotification('error', 'Missing Thumbnail');
         if (!title.trim()) return updateNotification('error', 'Missing title')
         if (!meta.trim()) return updateNotification('error', 'Missing Description')

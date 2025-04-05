@@ -10,7 +10,7 @@ export function NotificationProvider({children}: Props) {
     const [bgColor, setBgColor] = useState('');
     const [notification, setNotification] = useState({type: '', value: ''});
 
-    let timeoutID: number;
+    let timeoutID:  NodeJS.Timeout;
     const updateNotification = (type: string, value: string) => {
         if (timeoutID) return clearInterval(timeoutID);
         if (!type || !value) return;

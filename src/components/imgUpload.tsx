@@ -1,25 +1,28 @@
-import React, { useState, useRef } from "react";
+import React, {useState, useRef} from "react";
 import Modal from "react-modal";
 import Cropper from "react-easy-crop";
-import { MdZoomIn, MdZoomOut } from "react-icons/md";
-import { AiOutlineClose } from "react-icons/ai";
+import {MdZoomIn, MdZoomOut} from "react-icons/md";
+import {AiOutlineClose} from "react-icons/ai";
+
 
 Modal.setAppElement("#root");
+
 interface Props {
     isOpen: boolean;
-    setImgUrl: (url:string) => void;
-    setIsUploading:(IsUploading:boolean)=>void;
-    setIsOpen:(isOpen:boolean)=>void;
+    setImgUrl: (url: string) => void;
+    setIsUploading: (IsUploading: boolean) => void;
+    setIsOpen: (isOpen: boolean) => void;
 
 }
 
-const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) => {
+const ImageUploader = ({isOpen, setIsOpen, setIsUploading, setImgUrl}: Props) => {
     const [imageSrc, setImageSrc] = useState<string | null>(null);
-    const [crop, setCrop] = useState({ x: 0, y: 0 });
+    const [crop, setCrop] = useState({x: 0, y: 0});
     const [zoom, setZoom] = useState(1);
     const [croppedImage, setCroppedImage] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
-    const apiKey = "232bf0fabbf631fda3c1914a791e55fb";
+    const apiKey = import.meta.env.VITE_IMGBB_API_KEY;
+
 
     const onZoomChange = (operator: "+" | "-") => {
         setZoom((prev) => (operator === "+" ? prev + 0.1 : prev - 0.1));
@@ -85,7 +88,7 @@ const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) =>
         setIsOpen(false);
         const response = await fetch(croppedImage);
         const blob = await response.blob();
-        const file = new File([blob], "cropped.jpg", { type: "image/jpeg" });
+        const file = new File([blob], "cropped.jpg", {type: "image/jpeg"});
 
         const formData = new FormData();
         formData.append("image", file);
@@ -99,7 +102,7 @@ const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) =>
             console.log("Image URL:", result.data.url);
             setImgUrl(result.data.url);
             setIsUploading(false)
-           setIsOpen(false);
+            setIsOpen(false);
 
         } else {
             setIsUploading(false);
@@ -111,12 +114,13 @@ const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) =>
     return (
         <Modal
             isOpen={isOpen}
-            onRequestClose={()=>setIsOpen}
+            onRequestClose={() => setIsOpen(false)}
             className="w-[90%] md:w-[500px] bg-white rounded-lg shadow-xl p-4 relative mx-auto my-20 outline-none"
             overlayClassName="fixed inset-0  flex justify-center items-center"
         >
-            <button onClick={()=>setIsOpen(false)} className="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
-                <AiOutlineClose size={24} />
+            <button onClick={() => setIsOpen(false)}
+                    className="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
+                <AiOutlineClose size={24}/>
             </button>
 
             <h2 className="text-2xl font-semibold text-center mb-4">Upload & Crop Image</h2>
@@ -124,12 +128,13 @@ const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) =>
             <input
                 ref={inputRef}
                 type="file"
-                 className="border rounded rounded-full p-2 w-fit mb-3"
+                className="border rounded rounded-full p-2 w-fit mb-3"
                 accept="image/*"
                 onChange={onFileChange}
             />
 
-            <div className="relative w-full h-64 bg-gray-100 flex items-center justify-center rounded-md overflow-hidden">
+            <div
+                className="relative w-full h-64 bg-gray-100 flex items-center justify-center rounded-md overflow-hidden">
 
                 {imageSrc ? (
                     <Cropper
@@ -142,11 +147,11 @@ const ImageUploader = ({ isOpen, setIsOpen,setIsUploading,setImgUrl }: Props) =>
                         onCropComplete={handleCropComplete}
                     />
                 ) : (
-                    <img src="https://i.ibb.co/fz5crhWQ/cropped.jpg" alt="Thumbnail" className="w-full aspect-video" />
+                    <img src="https://i.ibb.co/fz5crhWQ/cropped.jpg" alt="Thumbnail" className="w-full aspect-video"/>
                 )}
             </div>
 
-            {imageSrc&& (<div className="flex justify-center gap-4 mt-3">
+            {imageSrc && (<div className="flex justify-center gap-4 mt-3">
                 <MdZoomOut size={30} className="cursor-pointer" onClick={() => onZoomChange("-")}/>
                 <MdZoomIn size={30} className="cursor-pointer" onClick={() => onZoomChange("+")}/>
             </div>)}

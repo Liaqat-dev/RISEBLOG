@@ -2,6 +2,8 @@ import NavBar from "@/components/Navbar.tsx";
 import { Route, Routes } from "react-router";
 import { Screen_Routes } from "../constants/routes.tsx";
 
+
+
 function App() {
     return (
         <div className=" h-screen flex flex-col">
