@@ -5,10 +5,11 @@ const post=axios.create({baseURL:'http://localhost:3000/api/post/',withCredentia
 const user=axios.create({baseURL:'http://localhost:3000/api/user/',withCredentials:true});
 
 const SignIn = () => {
-    window.location.href = `http://localhost:3000/api/auth/google?state=${window.location.href}`;
+    window.location.href = `http://localhost:3000/api/auth/google?state=${encodeURIComponent(window.location.href)}`;
+
 };
 const SignOut = () => {
-    window.location.href = 'http://localhost:3000/api/auth/logout';
+    window.location.href = `http://localhost:3000/api/auth/logout?state=${encodeURIComponent(window.location.href)}`;
 }
 const getPosts=async (pageNo: number, limit: number)=> {
     try {
