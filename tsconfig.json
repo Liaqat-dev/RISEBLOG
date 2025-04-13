@@ -11,7 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/context/*": ["context/*"]
+      "@/context/*": ["context/*"],
+      "@/api/*": ["api/*"]
     }
   }
 }

@@ -2,12 +2,18 @@ import {nav_links} from "../../constants/nav_links.ts";
 import {NavLink} from "react-router-dom";
 import {useState} from "react";
 import {IoMenu, IoClose} from "react-icons/io5";
+
+import {SignIn, SignOut} from '../api/api_routes.ts'
 import Button from "@/components/button.tsx";
+import {useUser} from "../../context/UserContext/useUser.ts";
+
 interface Props {
     className?: string,
 }
-const NavBar = ({className}:Props) => {
+
+const NavBar = ({className}: Props) => {
     const [showSideMenu, setShowSideMenu] = useState(false);
+    const {user} = useUser();
 
     // Toggle the side menu
     const toggleSideMenu = () => {
@@ -46,8 +52,18 @@ const NavBar = ({className}:Props) => {
                     </ul>
                 </div>
                 <div className="flex items-center justify-between ">
-                    <Button title={"Sign Up"}/>
+                    <div className={' max-sm:hidden'}>
+                        {!user && <Button title={"Sign Up"} onClick={() => SignIn()}/>}
+                        {user && <div className={'flex items-center gap-2'}>
+                            <img className={'rounded-full'} width={44} height={44} src={user.avatar} alt=''/>
+                            <div className={'flex flex-col '}>
+                                <p className={'text-[12px] text-gray-500 select-none'}>{user.name}</p>
+                                <p className={'text-[11px] text-gray-300 cursor-pointer hover:underline'} onClick={() => SignOut()}>Sign Out</p>
+                            </div>
 
+                        </div>}
+
+                    </div>
 
                     {/* Mobile Menu Button (Visible on xs screens) */}
                     <div className="sm:hidden">
@@ -66,7 +82,18 @@ const NavBar = ({className}:Props) => {
                     className="absolute top-full w-1/3   right-0  bg-white-1 shadow-md border-l border-b border-t border-gray-200  "
                     style={{borderBottomLeftRadius: 15}}
                 >
+
                     <ul className="list-none ">
+                        {user ? <div className={'pl-5 flex items-center gap-1'}>
+                                <img className={'rounded-full'} width={30} height={30} src={user.avatar} alt=''/>
+                                <div className={'flex flex-col '}>
+                                    <p className={'text-[11px] text-gray-500 select-none'}>{user.name}</p>
+                                </div>
+
+                            </div> :
+                            <li className={'pl-5 text-gray-700 hover:text-blue-600  cursor-pointer hover:underline'}
+                                onClick={() => SignIn()}>SignIn</li>}
+                        <hr/>
                         {nav_links.map((link, index) => (
                             <li key={link.name}>
                                 <NavLink
@@ -80,13 +107,19 @@ const NavBar = ({className}:Props) => {
                                 >
                                     <span className={'pl-3'}> {link.name}</span>
                                 </NavLink>
+
                                 {
-                                    index == nav_links.length - 1 ? null : <hr/>
+                                     index == nav_links.length - 1 && !user ? null : <hr/>
+
                                 }
 
 
                             </li>
+
                         ))}
+                        {user && <li className={'pl-5 text-gray-700 hover:text-blue-600  cursor-pointer  z-50 pl-3'}
+                                     onClick={() => SignOut()}>Sign Out</li>}
+
                     </ul>
                 </div>
             )}

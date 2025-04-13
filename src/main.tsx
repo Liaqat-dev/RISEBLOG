@@ -4,13 +4,17 @@ import './index.css'
 import App from './App.tsx'
 import Modal from 'react-modal';
 import {NotificationProvider} from "../context/NotficationContext/NotificationContext.tsx";
+import {UserProvider} from "../context/UserContext/UserContext.tsx";
 
 Modal.setAppElement('#root');
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
-        <NotificationProvider>
-            <App/>
+        <UserProvider>
+            <NotificationProvider>
+                <App/>
             </NotificationProvider>
+        </UserProvider>
+
     </BrowserRouter>
-,
+    ,
 )

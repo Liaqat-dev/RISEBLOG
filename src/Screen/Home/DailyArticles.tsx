@@ -42,8 +42,8 @@ const DailyArticles = () => {
             <section
                 className="flex  w-full   justify-center items-center gap-2 pb-10 max-md:flex-col max-md:items-center">
                 <div className="max-lg:w-[28%]  lg:w-[20%]  max-md:w-full z-10">
-                    <h1 className="text-8xl font-semibold text-zinc-900  max-md:text-center  max-md:max-w-full max-md:text-3xl max-lg:text-5xl max-xl:text-6xl max-2xl:text-7xl">
-                        Best <span className={'text-blue-500'}> Posts </span> Today
+                    <h1 className="text-8xl select-none font-semibold text-zinc-900  max-md:text-center  max-md:max-w-full max-md:text-3xl max-lg:text-5xl max-xl:text-6xl max-2xl:text-7xl">
+                        Best <span className={'text-white-1'}> Posts </span> Today
                     </h1>
                 </div>
                 <div className="ml-5 w-[70%]   max-md:mx-auto max-sm:max-w-[280px]   ">

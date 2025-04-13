@@ -20,10 +20,10 @@ function SearchForm() {
         setQuery('')
     }
 
-    return <form className={'relative flex items-center w-fit '}
+    return <form className={'relative flex items-center w-fit max-sm:w-[55%]  '}
         // onSubmit={handleSubmit}
     >
-        <input className={'bg-white outline-none border-2 border-blue-600 rounded-3xl px-3 py-1'} placeholder={'Search here...'}
+        <input className={'w-full bg-white outline-none border-2 border-blue-600 rounded-3xl px-3 py-1'} placeholder={'Search here...'}
                value={query}
                onChange={(e) => {
                    setQuery(e.target.value);

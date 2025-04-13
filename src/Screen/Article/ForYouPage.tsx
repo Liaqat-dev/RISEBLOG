@@ -65,13 +65,13 @@ function ForYouPage() {
     categories.unshift("All")
 
 
-    return <div className={'  min-w-0 bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl h-[calc(100vh-8rem)]'}>
+    return <div className={'  min-w-0 bg-white w-screen mt-10 mx-auto mx-1 max-w-6xl h-[calc(100vh-4rem)]'}>
         <div className="flex flex-col gap-2 p-2 my-1">
             <h2 className={'text-4xl text-secondary font-bold italic'}>For You</h2>
             <SearchForm/>
         </div>
         <div className={'flex max-lg:gap-3 gap-9 '}>
-            <section className={'min-w-0 flex-[2] bg-white-1 max-w-[600px]  rounded-md px-2 '}>
+            <section className={'min-w-0 flex-[2] bg-white-1 max-w-[600px]  rounded-md px-2  max-sm:mb-14'}>
                 <CategoryScroller categories={categories}/>
                 <div className={''}>
                     {

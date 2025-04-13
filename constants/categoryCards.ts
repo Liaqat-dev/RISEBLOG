@@ -1,127 +1,93 @@
-
 export const blogCategories = [
     {
         name: "Technology",
         description: "Stay updated with the latest in AI, gadgets, software, and emerging tech trends.",
-        image: "https://picsum.photos/540/971",
+        image: "https://i.ibb.co/6cnBmC5g/Technology.jpg",
     },
     {
-        name: "Health & Wellness",
+        name: "Health",
         description: "Tips on mental health, fitness routines, diet plans, and self-care for a healthier life.",
-        image: "https://picsum.photos/540/970",
+        image: "https://i.ibb.co/wZZmP3mp/Health.jpg",
     },
     {
         name: "Travel",
         description: "Explore travel guides, destination tips, and hidden gems around the world.",
-        image: "https://picsum.photos/540/972",
+        image: "https://i.ibb.co/7dRRH8Md/Travel.jpg",
     },
     {
         name: "Food",
         description: "Discover delicious recipes, restaurant reviews, and culinary inspirations.",
-        image: "https://picsum.photos/540/973",
+        image: "https://i.ibb.co/sd1S5wdp/Food.jpg",
     },
     {
         name: "Lifestyle",
         description: "Personal growth, home decor, productivity hacks, and everyday life inspirations.",
-        image: "https://picsum.photos/540/960",
+        image: "https://i.ibb.co/Kp1tpVNy/Life-Style.jpg",
     },
     {
         name: "Finance",
         description: "Advice on saving money, investing, budgeting, and achieving financial independence.",
-        image: "https://picsum.photos/540/966",
+        image: "https://i.ibb.co/TMsg62wY/Finance.jpg",
     },
     {
         name: "Education",
         description: "Learning resources, study techniques, and career development guides.",
-        image: "https://picsum.photos/540/967",
+        image: "https://i.ibb.co/tP8xRYhK/Education.jpg",
     },
     {
         name: "Entertainment",
         description: "Movie reviews, music trends, celebrity news, and the latest in pop culture.",
-        image: "https://picsum.photos/540/968",
+        image: "https://i.ibb.co/xtdkDgYg/Entertainment.jpg",
     },
     {
         name: "Business",
         description: "Entrepreneurship, startup tips, corporate strategies, and market insights.",
-        image: "https://picsum.photos/540/969",
+        image: "https://i.ibb.co/gFPDFpHT/Business.jpg",
     },
     {
         name: "Science",
         description: "Breakthroughs in physics, biology, space exploration, and scientific discoveries.",
-        image: "https://picsum.photos/540/950",
+        image: "https://i.ibb.co/N6SwBmDG/Science.jpg",
     },
     {
         name: "Sports",
         description: "Game analysis, athlete stories, and the latest updates from the world of sports.",
-        image: "https://picsum.photos/540/951",
-    },
-    {
-        name: "Gaming",
-        description: "Game reviews, eSports updates, and insights into the gaming industry.",
-        image: "https://picsum.photos/540/952",
-    },
-    {
-        name: "Fashion",
-        description: "Trendy outfits, style guides, and the latest updates from the fashion world.",
-        image: "https://picsum.photos/540/953",
-    },
-    {
-        name: "Parenting",
-        description: "Guidance on raising kids, family life, and parenting challenges.",
-        image: "https://picsum.photos/540/954",
-    },
-    {
-        name: "Relationships",
-        description: "Advice on love, dating, marriage, and building strong relationships.",
-        image: "https://picsum.photos/540/960?random=15",
+        image: "https://i.ibb.co/DDZdvSnq/Sports.jpg",
     },
     {
         name: "Environment",
         description: "Sustainability, climate change, and eco-friendly lifestyle choices.",
-        image: "https://picsum.photos/540/960?random=16",
+        image: "https://i.ibb.co/6Rb6rC7F/Environment.png",
     },
-    {
-        name: "Photography",
-        description: "Photography tips, editing tutorials, and the latest camera gear reviews.",
-        image: "https://picsum.photos/540/960?random=17",
-    },
+
     {
         name: "History",
         description: "Unravel the past with deep dives into historical events and figures.",
-        image: "https://picsum.photos/540/960?random=18",
+        image: "https://i.ibb.co/XxPBBCLy/History.jpg",
     },
     {
         name: "Self-Improvement",
         description: "Motivational content, productivity tips, and personal development strategies.",
-        image: "https://picsum.photos/540/960?random=19",
+        image: "https://i.ibb.co/Z60NQt6M/Self-Improvement.jpg",
     },
-    {
-        name: "Automobiles",
-        description: "Car reviews, industry news, and the latest advancements in automobiles.",
-        image: "https://picsum.photos/540/960?random=20",
-    },
+
+
 ];
 
 export const blogTags = [
-    "Life",
+
     "Technology",
     "Health",
     "Travel",
+    "History",
     "Education",
-    "Productivity",
-    "Career",
     "Finance",
     "Lifestyle",
-    "Inspiration",
     "Self-Improvement",
     "Business",
-    "Creativity",
-    "Motivation",
-    "Culture",
     "Entertainment",
     "Food",
-    "News",
     "Learning",
-    "Tips"
+
 ];
 

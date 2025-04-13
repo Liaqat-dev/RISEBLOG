@@ -12,6 +12,7 @@ export default defineConfig({
             "@components": path.resolve(__dirname, "./src/components"),
             "@screens": path.resolve(__dirname, "./src/screen"),
             "@context": path.resolve(__dirname, "context"),
+            "@api": path.resolve(__dirname, "./src/api"),
         },
     },
 })

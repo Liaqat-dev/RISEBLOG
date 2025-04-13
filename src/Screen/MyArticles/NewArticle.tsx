@@ -126,9 +126,9 @@ const NewArticle = ({ initialPost}: Props) => {
             <ImageUploader isOpen={modalOpen} setIsOpen={() => setModalOpen(false)} setImgUrl={setThumbnailUrl}
                            setIsUploading={setThumbnailUploading}/>
 
-            <div className={'flex flex-col flex-3     overflow-y-auto'}>
+            <div className={'flex flex-col flex-3      overflow-y-auto'}>
                 {/*topBar*/}
-                <div className={'flex h-10 justify-around items-center'}>
+                <div className={'flex h-10 justify-around items-center '}>
                     <h3 className={'select-none'}>New Article</h3>
                     <div className={'flex items-center'}>
                         <Button title={'Reset'} type={"button"} onClick={() => console.log(content)}/>
