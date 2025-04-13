@@ -6,7 +6,7 @@ interface UserContextType{
         name: string,
         email: string,
         avatar: string,
-    },
+    }|null,
     setUser: React.Dispatch<React.SetStateAction<{     name: string ,    email: string ,     avatar: string }>>
 }
 

@@ -1,6 +1,6 @@
 import {ReactNode, useEffect, useState} from "react";
 import {UserContext} from "./useUser";
-import {fetchCurrentUser} from "../../src/api/api_routes";
+import {fetchCurrentUser} from "@/api/api_routes.ts";
 
 interface Props {
     children: ReactNode;
@@ -15,7 +15,7 @@ export function UserProvider({children}: Props) {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const res = await fetchCurrentUser(); // ✅ wait for the data
+                const res = await fetchCurrentUser();
                 if (res) {
                     setUser({
                         name: res.displayName || '',
