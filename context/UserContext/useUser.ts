@@ -7,7 +7,7 @@ interface UserContextType{
         email: string,
         avatar: string,
     }|null,
-    setUser: React.Dispatch<React.SetStateAction<{     name: string ,    email: string ,     avatar: string }>>
+    setUser: React.Dispatch<React.SetStateAction<{     name: string ,    email: string ,     avatar: string }|null>>
 }
 
 export const UserContext = createContext<UserContextType>({

@@ -1,4 +1,4 @@
-// import {BiImageAdd} from "react-icons/bi";
+
 import {ImSpinner3} from "react-icons/im";
 
 import React, {useEffect, useState} from "react";
@@ -9,6 +9,9 @@ import {blogTags} from "../../../constants/categoryCards.ts";
 
 import {useNotification} from "../../../context/NotficationContext/useNotification.ts";
 import TextEditor from "@/components/textEditor/textEditor.tsx";
+
+import {useUser} from "../../../context/UserContext/useUser.ts";
+import {SignIn} from "@/api/api_routes.ts";
 
 
 interface Props {
@@ -24,6 +27,10 @@ interface Props {
 }
 
 const NewArticle = ({ initialPost}: Props) => {
+  const {user} = useUser();
+  if(!user){
+      SignIn();
+  }
     const defaultPost = {
         title: "",
         thumbnail: '',
